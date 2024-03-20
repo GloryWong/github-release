@@ -1,0 +1,43 @@
+{
+  "name": "github-release",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "prepare": "husky install",
+    "lint": "eslint .",
+    "lint:fix": "pnpm lint --fix",
+    "commit": "git-cz"
+  },
+  "dependencies": {
+    "@nuxt/ui": "^2.14.2",
+    "nuxt": "^3.11.1",
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.8.3",
+    "@commitlint/cli": "^19.2.1",
+    "@commitlint/config-conventional": "^19.1.0",
+    "@commitlint/cz-commitlint": "^19.2.0",
+    "@pinia/nuxt": "^0.5.1",
+    "@vueuse/nuxt": "^10.9.0",
+    "commitizen": "^4.3.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-perfectionist": "^2.7.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "nuxt-security": "^1.2.2",
+    "type-fest": "^4.13.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
+  }
+}
