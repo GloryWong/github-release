@@ -1,7 +1,7 @@
 {
   "name": "github-release",
   "type": "module",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "private": true,
   "license": "MIT",
   "scripts": {
@@ -21,6 +21,7 @@
     "micromark": "^4.0.0",
     "micromark-extension-gfm": "^3.0.0",
     "nuxt": "^3.11.1",
+    "octokit": "^3.1.2",
     "tailwindcss-scoped-preflight": "^2.1.0",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"

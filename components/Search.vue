@@ -10,18 +10,18 @@ const search = useDebounceFn(() => {
     return
 
   try {
-    const [o, r] = splitProjectName(text.value)
+    const [o, r] = splitOwnerRepo(text.value)
     owner.value = o
     repo.value = r
     searchRelease()
   }
   catch (error) {
-    toast.add({ color: 'red', title: 'Error', description: JSON.stringify(error) })
+    toast.add({ icon: 'i-heroicons-exclamation-circle-16-solid', color: 'red', title: 'Error', description: JSON.stringify(error) })
   }
 }, 200)
 
 whenever(error, (err) => {
-  toast.add({ color: 'red', title: 'Error', description: err.message })
+  toast.add({ icon: 'i-heroicons-exclamation-circle-16-solid', color: 'red', title: 'Error', description: err.message })
 })
 </script>
 

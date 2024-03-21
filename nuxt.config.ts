@@ -15,6 +15,10 @@ export default defineNuxtConfig({
     shim: false,
   },
 
+  imports: {
+    dirs: ['./constants'],
+  },
+
   appConfig: {
     appVersion: pkgJson.version,
   },
