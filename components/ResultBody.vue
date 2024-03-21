@@ -8,7 +8,7 @@ const props = defineProps<{
 
 const content = computed(() => {
   if (!props.release.body)
-    return
+    return null
 
   const htmlString = micromark(props.release.body, {
     extensions: [gfm()],
@@ -21,10 +21,11 @@ const content = computed(() => {
 const container = ref()
 onMounted(() => {
   watch(content, (val) => {
-    if (!val)
-      return
-    container.value.innerHTML = ''
-    container.value.appendChild(val)
+    container.value.innerHTML = '<div class="flex justify-center text-gray-400 dark:text-gray-600">No description</div>'
+    if (val) {
+      container.value.innerHTML = ''
+      container.value.appendChild(val)
+    }
   }, { immediate: true })
 })
 </script>

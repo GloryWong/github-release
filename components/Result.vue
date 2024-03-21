@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { release, loading } = storeToRefs(useReleaseStore())
+const { release, loading, owner, repo, tagName } = storeToRefs(useReleaseStore())
 </script>
 
 <template>
@@ -12,8 +12,8 @@ const { release, loading } = storeToRefs(useReleaseStore())
         <ResultBody :release="release" />
       </UCard>
       <UCard v-else>
-        <div class="flex justify-center items-center text-gray-300 dark:text-gray-700 min-h-[150px]">
-          Repository latest release will be listed here
+        <div class="flex justify-center items-center text-gray-400 dark:text-gray-600 min-h-[150px]">
+          {{ release === null ? `404: No release for ${owner}/${repo}${tagName ? `@${tagName}` : ''}` : 'Repository latest release will be listed here' }}
         </div>
       </UCard>
     </TransitionFade>
