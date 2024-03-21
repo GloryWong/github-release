@@ -20,7 +20,7 @@ const { release, loading, owner, repo, tagName } = storeToRefs(useReleaseStore()
     <TransitionFade>
       <div
         v-if="loading"
-        class="absolute top-0 bottom-0 left-0 right-0 bg-white/90 dark:bg-black/80 flex justify-center"
+        class="absolute top-0 bottom-0 left-0 right-0 bg-white/90 dark:bg-gray-900/80 flex justify-center"
       >
         <Icon name="svg-spinners:90-ring-with-bg" size="2rem" color="gray" class="mt-12" />
       </div>
