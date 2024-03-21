@@ -3,14 +3,14 @@ const { repo, owner, loading, error } = storeToRefs(useReleaseStore())
 const { fetchRelease: _fetchRelease } = useReleaseStore()
 const toast = useToast()
 
-const selected = ref('')
+const selected = ref<RepoItem>()
 
 const fetchRelease = useDebounceFn(() => {
-  if (!selected.value)
+  if (!selected.value?.fullName)
     return
 
   try {
-    const [o, r] = splitOwnerRepo(selected.value)
+    const [o, r] = splitOwnerRepo(selected.value.fullName)
     owner.value = o
     repo.value = r
     _fetchRelease()
@@ -34,10 +34,19 @@ watch([error, searchError], ([err, searchError]) => {
   <div class="flex justify-center gap-2">
     <UInputMenu
       v-model="selected" :search="searchRepo" :loading="searchLoading" autofocus
-      placeholder="Search for a repository" size="xl" leading-icon="i-heroicons-magnifying-glass-solid"
-      :debounce="500"
+      placeholder="Search for a repository" size="xl" leading-icon="i-heroicons-magnifying-glass-solid" :debounce="500"
+      option-attribute="fullName" class="w-[400px]"
       @keyup.enter="fetchRelease"
     >
+      <template #leading>
+        <UAvatar v-if="selected?.avatar" :src="selected.avatar" size="2xs" />
+        <UIcon v-else-if="selected?.icon" :name="selected.icon" class="w-5 h-5" />
+      </template>
+      <template #option="{ option: item }">
+        <UAvatar v-if="item?.avatar" :src="item.avatar" size="2xs" />
+        <UIcon v-else :name="item.icon" class="w-5 h-5" />
+        <span class="truncate">{{ item.fullName }}</span>
+      </template>
       <template #option-empty="{ query }">
         <q>{{ query }}</q> not found
       </template>

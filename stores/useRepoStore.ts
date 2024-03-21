@@ -4,6 +4,16 @@ import type { NuxtError } from '#app'
 
 export type SearchRepoResultItems = GetResponseTypeFromEndpointMethod<Octokit['rest']['search']['repos']>['data']['items']
 
+function transformItems(items: SearchRepoResultItems) {
+  return items.map(item => ({
+    fullName: item.full_name,
+    icon: 'i-heroicons-user-circle',
+    avatar: item.owner?.avatar_url,
+  }))
+}
+
+export type RepoItem = ReturnType<typeof transformItems>[0]
+
 export const useRepoStore = defineStore('repo', () => {
   const loading = useState('repoSearchLoading', () => false)
   const error = useState<NuxtError<unknown> | null>('repoSearchError', () => null)
@@ -22,7 +32,7 @@ export const useRepoStore = defineStore('repo', () => {
 
     if (resultItems.value.has(q)) {
       loading.value = false
-      return resultItems.value.get(q)!.map(v => v.full_name)
+      return transformItems(resultItems.value.get(q)!)
     }
 
     try {
@@ -32,7 +42,7 @@ export const useRepoStore = defineStore('repo', () => {
       })
 
       resultItems.value.set(q, data.items)
-      return data.items.map(v => v.full_name)
+      return transformItems(data.items)
     }
     catch (err: any) {
       error.value = err
