@@ -23,7 +23,7 @@ onMounted(() => {
   watch(content, (val) => {
     if (!val)
       return
-
+    container.value.innerHTML = ''
     container.value.appendChild(val)
   }, { immediate: true })
 })
