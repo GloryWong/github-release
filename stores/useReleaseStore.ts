@@ -7,7 +7,8 @@ export type Release = GetResponseTypeFromEndpointMethod<Octokit['rest']['repos']
 export const useReleaseStore = defineStore('release', () => {
   const owner = useState('owner', () => '')
   const repo = useState('repo', () => '')
-  const releases = useState('releases', () => new Map<string, Release>())
+  const tagName = useState<string | undefined>('tagName')
+
   const release = useState<Release | null>('release', () => null)
   const loading = useState('loading', () => false)
   const error = useState<NuxtError<unknown> | null>('error', () => null)
@@ -16,19 +17,35 @@ export const useReleaseStore = defineStore('release', () => {
   const searchRelease = async () => {
     loading.value = true
     try {
-      const name = compositeOwnerRepo(owner.value, repo.value)
-      if (releases.value.has(name)) {
-        release.value = releases.value.get(name)!
+      const _owner = owner.value
+      const _repo = repo.value
+      const _tagName = tagName.value
+
+      const item = await getStorageRelease(_owner, _repo, _tagName)
+      if (item) {
+        release.value = item
         return
       }
 
-      const { data } = await octokit.rest.repos.getLatestRelease({
-        owner: owner.value,
-        repo: repo.value,
-      })
+      let data: Release
+      if (_tagName) {
+        const result = await octokit.rest.repos.getReleaseByTag({
+          owner: _owner,
+          repo: _repo,
+          tag: _tagName,
+        })
+        data = result.data
+      }
+      else {
+        const result = await octokit.rest.repos.getLatestRelease({
+          owner: _owner,
+          repo: _repo,
+        })
+        data = result.data
+      }
 
-      releases.value = releases.value.set(name, data)
       release.value = data
+      setStorageRelease(_owner, _repo, data, _tagName)
     }
     catch (err: any) {
       error.value = err

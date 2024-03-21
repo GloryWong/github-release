@@ -24,27 +24,32 @@ const releaseTimeAgo = useTimeAgo(date)
 <template>
   <div class="flex flex-col gap-2">
     <div class="flex items-center gap-1">
-      <UButton
-        variant="link" color="black" size="xl" class="p-0" :to="`${GITHUB_URL_PREFIX}/${ownerRepo.owner}`"
-        target="_blank"
-      >
-        {{ ownerRepo.owner }}
-      </UButton>
+      <UTooltip text="Owner" :popper="{ arrow: true }">
+        <UButton
+          variant="link" color="black" size="xl" class="p-0" :to="`${GITHUB_URL_PREFIX}/${ownerRepo.owner}`"
+          target="_blank"
+        >
+          {{ ownerRepo.owner }}
+        </UButton>
+      </UTooltip>
       /
-      <UButton
-        variant="link" color="black" size="xl" class="p-0"
-        :to="`${GITHUB_URL_PREFIX}/${compositeOwnerRepo(ownerRepo.owner, ownerRepo.repo)}`"
-        target="_blank"
-      >
-        {{ ownerRepo.repo }}
-      </UButton>
+      <UTooltip text="Repository" :popper="{ arrow: true }">
+        <UButton
+          variant="link" color="black" size="xl" class="p-0"
+          :to="`${GITHUB_URL_PREFIX}/${compositeOwnerRepo(ownerRepo.owner, ownerRepo.repo)}`" target="_blank"
+        >
+          {{ ownerRepo.repo }}
+        </UButton>
+      </UTooltip>
     </div>
     <div>
-      <UButton :to="release.html_url" target="_blank" variant="link" class="p-0">
-        <h1 class="text-3xl">
-          {{ release.tag_name }}
-        </h1>
-      </UButton>
+      <UTooltip text="Tag name" :popper="{ arrow: true }">
+        <UButton :to="release.html_url" target="_blank" variant="link" class="p-0">
+          <h1 class="text-3xl">
+            {{ release.tag_name }}
+          </h1>
+        </UButton>
+      </UTooltip>
     </div>
     <div class="mt-4">
       <div class="flex items-center gap-1">
