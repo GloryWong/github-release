@@ -6,19 +6,32 @@ const props = defineProps<{
   release: Release
 }>()
 
-const contentHtml = computed(() => {
+const content = computed(() => {
   if (!props.release.body)
-    return 'none'
+    return
 
-  return micromark(props.release.body, {
+  const htmlString = micromark(props.release.body, {
     extensions: [gfm()],
     htmlExtensions: [gfmHtml()],
   })
+
+  return parseHtmlAndBlankAnchor(htmlString)
+})
+
+const container = ref()
+onMounted(() => {
+  watch(content, (val) => {
+    if (!val)
+      return
+
+    container.value.appendChild(val)
+  }, { immediate: true })
 })
 </script>
 
 <template>
-  <div data-tailwind="false" v-html="contentHtml"></div>
+  <div ref="container" data-tailwind="false">
+  </div>
 </template>
 
 <style scoped>
