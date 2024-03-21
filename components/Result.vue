@@ -13,7 +13,7 @@ const { release, loading, owner, repo, tagName } = storeToRefs(useReleaseStore()
       </UCard>
       <UCard v-else>
         <div class="flex justify-center items-center text-gray-400 dark:text-gray-600 min-h-[150px]">
-          {{ release === null ? `404: No release for ${owner}/${repo}${tagName ? `@${tagName}` : ''}` : 'Repository latest release will be listed here' }}
+          {{ `404: No release for ${owner}/${repo}${tagName ? `@${tagName}` : ''}` }}
         </div>
       </UCard>
     </TransitionFade>
