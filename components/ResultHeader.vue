@@ -52,13 +52,18 @@ const releaseTimeAgo = useTimeAgo(date)
       </UTooltip>
     </div>
     <div class="mt-4">
-      <div class="flex items-center gap-1">
-        <UAvatar :src="release.author.avatar_url" />
-        <UButton color="gray" variant="link" :to="release.author.html_url" target="_blank">
-          {{ release.author.login }}
-        </UButton>
-        <div class="text-gray-500">
-          released this on {{ releaseTime }} ({{ releaseTimeAgo }})
+      <div class="flex items-center gap-1 flex-col sm:flex-row">
+        <div class="flex items-center w-full sm:w-auto">
+          <UAvatar :src="release.author.avatar_url" />
+          <UButton color="gray" variant="link" :to="release.author.html_url" target="_blank">
+            {{ release.author.login }}
+          </UButton>
+          <div class="text-gray-500 text-sm">
+            released this on
+          </div>
+        </div>
+        <div class="text-gray-500 text-sm">
+          {{ releaseTime }} ({{ releaseTimeAgo }})
         </div>
       </div>
     </div>
