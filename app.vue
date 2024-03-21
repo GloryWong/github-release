@@ -1,11 +1,14 @@
 <template>
-  <UContainer>
-    <div class="flex flex-col gap-8">
-      <div class="flex flex-col gap-4 mt-4">
-        <Brand />
-        <Search />
+  <div class="my-4">
+    <UContainer>
+      <div class="flex flex-col gap-8">
+        <div class="flex flex-col gap-4">
+          <Brand />
+          <Search />
+        </div>
+        <Result />
       </div>
-      <Result />
-    </div>
-  </UContainer>
+    </UContainer>
+    <UNotifications />
+  </div>
 </template>

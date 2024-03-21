@@ -1,6 +1,7 @@
 {
   "name": "github-release",
   "type": "module",
+  "version": "0.1.0",
   "private": true,
   "license": "MIT",
   "scripts": {
@@ -16,7 +17,11 @@
   },
   "dependencies": {
     "@nuxt/ui": "^2.14.2",
+    "localforage": "^1.10.0",
+    "micromark": "^4.0.0",
+    "micromark-extension-gfm": "^3.0.0",
     "nuxt": "^3.11.1",
+    "tailwindcss-scoped-preflight": "^2.1.0",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },
@@ -25,6 +30,7 @@
     "@commitlint/cli": "^19.2.1",
     "@commitlint/config-conventional": "^19.1.0",
     "@commitlint/cz-commitlint": "^19.2.0",
+    "@morev/vue-transitions": "^3.0.2",
     "@pinia/nuxt": "^0.5.1",
     "@vueuse/nuxt": "^10.9.0",
     "commitizen": "^4.3.0",
