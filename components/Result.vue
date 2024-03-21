@@ -23,6 +23,15 @@ const ownerRepo = computed(() => {
     repo,
   }
 })
+
+const date = computed(() => release.value ? new Date(release.value.published_at) : '')
+const releaseTime = computed(() => date.value
+  ? date.value.toLocaleString(undefined, {
+    dateStyle: 'medium',
+    timeStyle: 'short',
+  })
+  : '')
+const releaseTimeAgo = useTimeAgo(date)
 </script>
 
 <template>
@@ -62,10 +71,7 @@ const ownerRepo = computed(() => {
                     {{ release.author.login }}
                   </UButton>
                   <div class="text-gray-500">
-                    released this at {{ new Date(release.published_at).toLocaleString(undefined, {
-                      dateStyle: 'medium',
-                      timeStyle: 'short',
-                    }) }}
+                    released this on {{ releaseTime }} ({{ releaseTimeAgo }})
                   </div>
                 </div>
               </div>
@@ -76,12 +82,15 @@ const ownerRepo = computed(() => {
       </div>
       <UCard v-else>
         <div class="flex justify-center text-gray-300 dark:text-gray-700">
-          search a repository
+          Repository latest release is listed here
         </div>
       </UCard>
     </TransitionFade>
     <TransitionFade>
-      <div v-if="loading" class="absolute top-0 bottom-0 left-0 right-0 bg-white/90 dark:bg-black/80 flex justify-center">
+      <div
+        v-if="loading"
+        class="absolute top-0 bottom-0 left-0 right-0 bg-white/90 dark:bg-black/80 flex justify-center"
+      >
         <Icon name="svg-spinners:90-ring-with-bg" size="4rem" color="gray" class="mt-12" />
       </div>
     </TransitionFade>

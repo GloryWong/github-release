@@ -27,7 +27,7 @@ whenever(error, (err) => {
 
 <template>
   <div class="flex justify-center gap-2">
-    <UInput v-model.trim="text" size="xl" placeholder="owner/repo" @keyup.enter="search" />
+    <UInput v-model.trim="text" size="xl" placeholder="owner/repo" autofocus @keyup.enter="search" />
     <UButton
       icon="i-heroicons-magnifying-glass-solid" label="Search" :loading="loading" :disabled="!text"
       @click="search"
