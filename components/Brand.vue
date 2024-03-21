@@ -4,7 +4,7 @@ const { appVersion } = useAppConfig()
 
 <template>
   <div class="flex flex-col items-center">
-    <h1 class="text-2xl flex gap-1 items-center">
+    <h1 class="text-3xl flex gap-2 items-center">
       Github Release
       <UBadge color="white" :label="appVersion" />
     </h1>

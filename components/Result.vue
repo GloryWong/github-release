@@ -27,7 +27,7 @@ const ownerRepo = computed(() => {
 
 <template>
   <div class="relative">
-    <TransitionFade>
+    <TransitionFade mode="out-in">
       <div v-if="release">
         <UCard>
           <template #header>
@@ -75,13 +75,13 @@ const ownerRepo = computed(() => {
         </UCard>
       </div>
       <UCard v-else>
-        <div class="flex justify-center text-gray-500 text-xl">
-          search a repo
+        <div class="flex justify-center text-gray-300 dark:text-gray-700">
+          search a repository
         </div>
       </UCard>
     </TransitionFade>
     <TransitionFade>
-      <div v-if="loading" class="absolute top-0 bottom-0 left-0 right-0 bg-white/90 flex justify-center">
+      <div v-if="loading" class="absolute top-0 bottom-0 left-0 right-0 bg-white/90 dark:bg-black/80 flex justify-center">
         <Icon name="svg-spinners:90-ring-with-bg" size="4rem" color="gray" class="mt-12" />
       </div>
     </TransitionFade>
