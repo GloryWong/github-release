@@ -35,8 +35,7 @@ watch([error, searchError], ([err, searchError]) => {
     <UInputMenu
       v-model="selected" :search="searchRepo" :loading="searchLoading" autofocus
       placeholder="Search for a repository" size="xl" leading-icon="i-heroicons-magnifying-glass-solid" :debounce="500"
-      option-attribute="fullName" class="w-[400px]"
-      @keyup.enter="fetchRelease"
+      option-attribute="fullName" class="w-[400px]" @keyup.enter="fetchRelease"
     >
       <template #leading>
         <UAvatar v-if="selected?.avatar" :src="selected.avatar" size="2xs" />
@@ -55,7 +54,7 @@ watch([error, searchError], ([err, searchError]) => {
       </template>
     </UInputMenu>
     <UButton
-      icon="i-heroicons-magnifying-glass-solid" label="Search" :loading="loading" :disabled="!selected"
+      icon="i-heroicons-arrow-down-circle" label="Fetch" :loading="loading" :disabled="!selected"
       @click="fetchRelease"
     />
   </div>

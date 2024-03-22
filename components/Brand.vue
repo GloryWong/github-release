@@ -9,7 +9,7 @@ const { appVersion } = useAppConfig()
         <img src="/logo.svg" />
       </span>
       <span class="text-2xl sm:text-3xl flex gap-2 justify-center items-center">
-        <h1 class="flex-grow truncate">Github Repo Release</h1>
+        <h1 class="flex-grow truncate">GitHub Repo Release</h1>
         <UBadge color="white" :label="appVersion" />
       </span>
     </div>
