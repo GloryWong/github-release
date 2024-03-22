@@ -1,5 +1,9 @@
 <script setup lang="ts">
 const { release, loading, owner, repo, tagName } = storeToRefs(useReleaseStore())
+
+useHead({
+  title: computed(() => compositeReleaseKey(owner.value, repo.value, tagName.value)),
+})
 </script>
 
 <template>

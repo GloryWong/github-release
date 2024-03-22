@@ -1,6 +1,12 @@
 <script setup lang="ts">
 const { release } = storeToRefs(useReleaseStore())
 const initial = computed(() => release.value === undefined)
+
+useHead({
+  titleTemplate: (titleChunk) => {
+    return titleChunk ? `${titleChunk} - GitHub Repo Release` : 'GitHub Repo Release'
+  },
+})
 </script>
 
 <template>
