@@ -9,7 +9,7 @@ useHead({
 <template>
   <div class="relative">
     <TransitionFade mode="out-in">
-      <UCard v-if="release" :ui="{ body: { padding: 'p-0 sm:p-0' } }">
+      <UCard v-if="release" :ui="{ base: 'overflow-hidden', body: { padding: 'p-0 sm:p-0' } }">
         <template #header>
           <ResultHeader :release="release" />
         </template>

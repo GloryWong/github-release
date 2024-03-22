@@ -1,7 +1,7 @@
 {
   "name": "github-release",
   "type": "module",
-  "version": "0.3.8",
+  "version": "0.3.9",
   "private": true,
   "license": "MIT",
   "scripts": {

@@ -31,7 +31,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <article ref="container" data-tailwind="false" class="markdown-body box-border p-11">
+  <article ref="container" data-tailwind="false" class="markdown-body box-border px-4 py-5 sm:p-6 md:p-8 lg:p-11">
   </article>
 </template>
 

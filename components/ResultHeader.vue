@@ -62,7 +62,7 @@ const releaseTimeAgo = useTimeAgo(date)
             released this on
           </div>
         </div>
-        <div class="text-gray-500 text-sm">
+        <div class="text-gray-500 text-sm w-full sm:w-auto">
           {{ releaseTime }} ({{ releaseTimeAgo }})
         </div>
       </div>
