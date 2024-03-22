@@ -3,9 +3,9 @@ const { appVersion } = useAppConfig()
 </script>
 
 <template>
-  <div class="flex flex-col sm:gap4 items-center">
+  <div class="flex flex-col sm:gap-4 items-center">
     <div class="flex gap-1 items-center w-full justify-center">
-      <span class="w-10 h-10 flex items-center">
+      <span class="w-7 h-7 sm:w-10 sm:h-10 flex items-center">
         <img src="/logo.svg" />
       </span>
       <span class="text-2xl sm:text-3xl flex gap-2 justify-center items-center">
