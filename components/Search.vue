@@ -3,14 +3,19 @@ const { repo, owner, loading, error } = storeToRefs(useReleaseStore())
 const { fetchRelease: _fetchRelease } = useReleaseStore()
 const toast = useToast()
 
+const ownerRepo = ref<string>()
 const selected = ref<RepoItem>()
+watch(() => selected.value?.fullName, (fullName) => {
+  ownerRepo.value = fullName
+})
 
 const fetchRelease = useDebounceFn(() => {
-  if (!selected.value?.fullName)
+  const op = ownerRepo.value
+  if (!op)
     return
 
   try {
-    const [o, r] = splitOwnerRepo(selected.value.fullName)
+    const [o, r] = splitOwnerRepo(op)
     owner.value = o
     repo.value = r
     _fetchRelease()
@@ -28,12 +33,27 @@ watch([error, searchError], ([err, searchError]) => {
   if (err || searchError)
     toast.add({ icon: 'i-heroicons-exclamation-circle-16-solid', color: 'red', title: 'Error', description: err?.message || searchError?.message })
 })
+
+// Search for npm
+const npmSearch = ref(true)
+const selectedNpmOwnerRepo = ref<string>()
+watch(selectedNpmOwnerRepo, (fullName) => {
+  ownerRepo.value = fullName
+})
 </script>
 
 <template>
   <div class="flex justify-center gap-2">
+    <div class="flex items-center">
+      <UTooltip :text="`Switch to ${npmSearch ? 'GitHub repo search' : 'Npm search'}`">
+        <UButton variant="outline" :padded="false" :color="npmSearch ? 'red' : 'white'" @click="npmSearch = !npmSearch">
+          <UIcon :name="npmSearch ? 'i-mdi-npm' : 'i-prime-github'" dynamic class="text-3xl" />
+        </UButton>
+      </UTooltip>
+    </div>
+    <SearchNpm v-if="npmSearch" v-model="selectedNpmOwnerRepo" @keyup-enter="fetchRelease" />
     <UInputMenu
-      v-model="selected" :search="searchRepo" :loading="searchLoading" autofocus
+      v-else v-model="selected" :search="searchRepo" :loading="searchLoading" autofocus
       placeholder="Search for a repository" size="xl" leading-icon="i-heroicons-magnifying-glass-solid" :debounce="500"
       option-attribute="fullName" class="w-[400px]" @keyup.enter="fetchRelease"
     >
@@ -54,7 +74,7 @@ watch([error, searchError], ([err, searchError]) => {
       </template>
     </UInputMenu>
     <UButton
-      icon="i-heroicons-arrow-down-circle" label="Fetch" :loading="loading" :disabled="!selected"
+      icon="i-heroicons-arrow-down-circle" label="Fetch" :loading="loading" :disabled="!ownerRepo"
       @click="fetchRelease"
     />
   </div>

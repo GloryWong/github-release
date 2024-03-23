@@ -4,7 +4,7 @@ const props = defineProps<{
 }>()
 
 const ownerRepo = computed(() => {
-  const [owner, repo] = getOwnerRepoFromTagURL(props.release.html_url)
+  const [owner, repo] = getOwnerRepoFromGitHubURI(props.release.html_url)
   return {
     owner,
     repo,

@@ -1,3 +1,5 @@
+import pMemoize from 'p-memoize'
+import ExpiryMap from 'expiry-map'
 import type { Octokit } from 'octokit'
 import type { GetResponseTypeFromEndpointMethod } from '@octokit/types'
 import type { NuxtError } from '#app'
@@ -18,7 +20,17 @@ export const useRepoStore = defineStore('repo', () => {
   const loading = useState('repoSearchLoading', () => false)
   const error = useState<NuxtError<unknown> | null>('repoSearchError', () => null)
   const { octokit } = useOctokitStore()
-  const resultItems = useState('repoSearchResults', () => new Map<string, SearchRepoResultItems>())
+
+  const _searchRepo = pMemoize(async (q: string) => {
+    const { data } = await octokit.rest.search.repos({
+      q,
+      per_page: 7,
+    })
+
+    return transformItems(data.items)
+  }, {
+    cache: new ExpiryMap(60 * 60 * 1000) as any,
+  })
 
   const searchRepo = async (query: string) => {
     error.value = null
@@ -30,19 +42,8 @@ export const useRepoStore = defineStore('repo', () => {
       return []
     }
 
-    if (resultItems.value.has(q)) {
-      loading.value = false
-      return transformItems(resultItems.value.get(q)!)
-    }
-
     try {
-      const { data } = await octokit.rest.search.repos({
-        q,
-        per_page: 7,
-      })
-
-      resultItems.value.set(q, data.items)
-      return transformItems(data.items)
+      return _searchRepo(q)
     }
     catch (err: any) {
       error.value = err

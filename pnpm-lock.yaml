@@ -8,6 +8,9 @@ dependencies:
   '@nuxt/ui':
     specifier: ^2.14.2
     version: 2.14.2(nuxt@3.11.1)(vite@5.2.2)(vue@3.4.21)
+  expiry-map:
+    specifier: ^2.0.0
+    version: 2.0.0
   localforage:
     specifier: ^1.10.0
     version: 1.10.0
@@ -23,6 +26,9 @@ dependencies:
   octokit:
     specifier: ^3.1.2
     version: 3.1.2
+  p-memoize:
+    specifier: ^7.1.1
+    version: 7.1.1
   tailwindcss-scoped-preflight:
     specifier: ^3.0.4
     version: 3.0.4(postcss@8.4.38)(tailwindcss@3.4.1)
@@ -64,6 +70,9 @@ devDependencies:
   eslint-plugin-perfectionist:
     specifier: ^2.7.0
     version: 2.7.0(eslint@8.57.0)(typescript@5.4.3)(vue-eslint-parser@9.4.2)
+  https-proxy-agent:
+    specifier: ^7.0.4
+    version: 7.0.4
   husky:
     specifier: ^9.0.11
     version: 9.0.11
@@ -5326,6 +5335,13 @@ packages:
       homedir-polyfill: 1.0.3
     dev: true
 
+  /expiry-map@2.0.0:
+    resolution: {integrity: sha512-K1I5wJe2fiqjyUZf/xhxwTpaopw3F+19DsO7Oggl20+3SVTXDIevVRJav0aBMfposQdkl2E4+gnuOKd3j2X0sA==}
+    engines: {node: '>=8'}
+    dependencies:
+      map-age-cleaner: 0.2.0
+    dev: false
+
   /exponential-backoff@3.1.1:
     resolution: {integrity: sha512-dX7e/LHVJ6W3DE1MHWi9S1EYzDESENfLrYohG2G++ovZrYOkm4Knwa0mc1cn84xJOR4KEU0WSchhLbd0UklbHw==}
 
@@ -6803,6 +6819,13 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
+  /map-age-cleaner@0.2.0:
+    resolution: {integrity: sha512-AvxTC6id0fzSf6OyNBTp1syyCuKO7nOJvHgYlhT0Qkkjvk40zZo+av3ayVgXlxnF/DxEzEfY9mMdd7FHsd+wKQ==}
+    engines: {node: '>=7.6'}
+    dependencies:
+      p-defer: 1.0.0
+    dev: false
+
   /mdast-util-from-markdown@0.8.5:
     resolution: {integrity: sha512-2hkTXtYYnr+NubD/g6KGBS/0mFmBcifAsI0yIWRiRo0PjVs6SSOSOdtzbp6kSGnShDN6G5aWZpKQ2lWRy27mWQ==}
     dependencies:
@@ -7893,6 +7916,11 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
+  /p-defer@1.0.0:
+    resolution: {integrity: sha512-wB3wfAxZpk2AzOfUMJNL+d36xothRSyj8EXOa4f6GMqYDN9BJaaSISbsk+wS9abmnebVw95C2Kb5t85UmpCxuw==}
+    engines: {node: '>=4'}
+    dev: false
+
   /p-limit@2.3.0:
     resolution: {integrity: sha512-//88mFWSJx8lxCzwdAABTJL2MyWB12+eIY7MDL2SqLmAkeKU9qxRvWuSyTjm3FUmpBEMuFfckAIqEaVGUDxb6w==}
     engines: {node: '>=6'}
@@ -7938,6 +7966,14 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       aggregate-error: 3.1.0
+
+  /p-memoize@7.1.1:
+    resolution: {integrity: sha512-DZ/bONJILHkQ721hSr/E9wMz5Am/OTJ9P6LhLFo2Tu+jL8044tgc9LwHO8g4PiaYePnlVVRAJcKmgy8J9MVFrA==}
+    engines: {node: '>=14.16'}
+    dependencies:
+      mimic-fn: 4.0.0
+      type-fest: 3.13.1
+    dev: false
 
   /p-try@2.2.0:
     resolution: {integrity: sha512-R4nPAVTAU0B9D35/Gk3uJf/7XYbQcyohSKdvAxIRSNghFl4e71hVoGnBNQz9cWaXxO2I10KTC+3jMdvvoKw6dQ==}
