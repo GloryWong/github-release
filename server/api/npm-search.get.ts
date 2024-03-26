@@ -1,10 +1,9 @@
-import https from 'node:https'
-
-// In local development, set https proxy to get access to npm api
-// Fuck GFW!!!
+// To stabilize access to the npm server, which can be sporadically obstructed by the god damn GFW,
+// configure an HTTPS proxy within the local development environment.
+const defaultOptions: Record<string, any> = {}
 if (process.env.NODE_ENV === 'development') {
-  import('https-proxy-agent').then(({ HttpsProxyAgent }) => {
-    https.globalAgent = new HttpsProxyAgent('http://127.0.0.1:51837')
+  import('undici').then(({ ProxyAgent }) => {
+    defaultOptions.dispatcher = new ProxyAgent('http://127.0.0.1:51837')
   })
 }
 
@@ -72,6 +71,7 @@ export default defineCachedEventHandler(async (event) => {
 
   try {
     const data = await $fetch<SearchNpmResultItems>('https://www.npmjs.com/search/suggestions', {
+      ...defaultOptions,
       query: {
         q: query,
       },
