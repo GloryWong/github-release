@@ -10,7 +10,10 @@ const { appVersion } = useAppConfig()
       </span>
       <span class="text-2xl sm:text-3xl flex gap-2 justify-center items-center">
         <h1 class="flex-grow truncate">GitHub Repo Release</h1>
-        <UBadge color="white" :label="appVersion" />
+        <UButton
+          color="white" :label="appVersion"
+          :to="`https://github.com/GloryWong/github-release/releases/tag/v${appVersion}`" target="_blank"
+        />
       </span>
     </div>
     <p class="text-gray-500 text-sm sm:text-base">
