@@ -12,42 +12,33 @@
     "postinstall": "nuxt prepare",
     "prepare": "pnpm simple-git-hooks",
     "lint": "eslint .",
-    "lint:fix": "pnpm lint --fix",
-    "commit": "git-cz"
+    "lint:fix": "pnpm lint --fix"
   },
   "dependencies": {
-    "@nuxt/ui": "^2.17.0",
+    "@nuxt/ui": "^2.18.2",
     "expiry-map": "^2.0.0",
     "localforage": "^1.10.0",
     "micromark": "^4.0.0",
     "micromark-extension-gfm": "^3.0.0",
-    "nuxt": "^3.12.3",
+    "nuxt": "^3.12.4",
     "octokit": "^4.0.2",
     "p-memoize": "^7.1.1",
-    "tailwindcss-scoped-preflight": "^3.3.0",
-    "vue": "^3.4.31",
+    "tailwindcss-scoped-preflight": "^3.4.3",
+    "vue": "^3.4.34",
     "vue-router": "^4.4.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.22.0",
+    "@antfu/eslint-config": "^2.24.0",
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
-    "@commitlint/cz-commitlint": "^19.2.0",
     "@morev/vue-transitions": "^3.0.2",
-    "@pinia/nuxt": "^0.5.1",
+    "@pinia/nuxt": "^0.5.2",
     "@vueuse/nuxt": "^10.11.0",
-    "commitizen": "^4.3.0",
-    "eslint": "^8.57.0",
-    "eslint-plugin-perfectionist": "^2.11.0",
+    "eslint": "^9.8.0",
     "lint-staged": "^15.2.7",
     "nuxt-security": "^1.4.3",
     "simple-git-hooks": "^2.11.1",
-    "type-fest": "^4.21.0"
-  },
-  "config": {
-    "commitizen": {
-      "path": "@commitlint/cz-commitlint"
-    }
+    "type-fest": "^4.23.0"
   },
   "simple-git-hooks": {
     "commit-msg": "pnpm commitlint --edit ${1}",
