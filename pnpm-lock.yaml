@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@nuxt/ui':
         specifier: ^2.18.2
-        version: 2.18.2(focus-trap@7.5.4)(magicast@0.3.4)(rollup@4.19.1)(vite@5.3.5(@types/node@22.0.0)(terser@5.31.3))(vue@3.4.34(typescript@5.5.4))
+        version: 2.18.3(focus-trap@7.5.4)(magicast@0.3.4)(rollup@4.19.1)(vite@5.3.5(@types/node@22.0.0)(terser@5.31.3))(vue@3.4.34(typescript@5.5.4))
       expiry-map:
         specifier: ^2.0.0
         version: 2.0.0
@@ -979,8 +979,8 @@ packages:
     peerDependencies:
       vite: '*'
 
-  '@nuxt/icon@1.4.0':
-    resolution: {integrity: sha512-epTJGQTOk8ScE7iN2G1laemDZrpd48l07bCFIYDCg+rgO5IJGvgbVqCIdxbvAMfZJMoH9y/q540hDRQR0ju1eA==}
+  '@nuxt/icon@1.4.3':
+    resolution: {integrity: sha512-co1O1qZTJtvaZOz2YINrd0mcSWMDUs5xBxWRQF2mKgVn+uUJzmHKe/xYmmjSpXUjr0YKvIFQdnNYvJGnRM3jWQ==}
 
   '@nuxt/kit@3.12.4':
     resolution: {integrity: sha512-aNRD1ylzijY0oYolldNcZJXVyxdGzNTl+Xd0UYyFQCu9f4wqUZqQ9l+b7arCEzchr96pMK0xdpvLcS3xo1wDcw==}
@@ -994,8 +994,8 @@ packages:
     resolution: {integrity: sha512-KH6wxzsNys69daSO0xUv0LEBAfhwwjK1M+0Cdi1/vxmifCslMIY7lN11B4eywSfscbyVPAYJvANyc7XiVPImBQ==}
     hasBin: true
 
-  '@nuxt/ui@2.18.2':
-    resolution: {integrity: sha512-azij3fV1FkEMG+sgTMEQiXkJMnII3HNQE+3r8g9QhUgO7iZ13TlUkXl0iYd+U/cGa4aZYki6WXJ45WyETtV/IA==}
+  '@nuxt/ui@2.18.3':
+    resolution: {integrity: sha512-bFy3K0cDPRlEYclQAjIgVFUGFb91sGYAtBmEzunFux85aUw0g4tI7vsWdyVijhKzGOyOjBuLGaG40kGl4AIXpA==}
     engines: {node: '>=v16.20.2'}
 
   '@nuxt/vite-builder@3.12.4':
@@ -1425,11 +1425,11 @@ packages:
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
 
-  '@tanstack/virtual-core@3.8.3':
-    resolution: {integrity: sha512-vd2A2TnM5lbnWZnHi9B+L2gPtkSeOtJOAw358JqokIH1+v2J7vUAzFVPwB/wrye12RFOurffXu33plm4uQ+JBQ==}
+  '@tanstack/virtual-core@3.8.4':
+    resolution: {integrity: sha512-iO5Ujgw3O1yIxWDe9FgUPNkGjyT657b1WNX52u+Wv1DyBFEpdCdGkuVaky0M3hHFqNWjAmHWTn4wgj9rTr7ZQg==}
 
-  '@tanstack/vue-virtual@3.8.3':
-    resolution: {integrity: sha512-xrFLkOiqLoGwohgr1+Q880hkNdQWqwi19EXzx38iAjVEm1Db3KIAV0aVP57/dnNXU3NO1Vx8wnIHII5J4n1LyA==}
+  '@tanstack/vue-virtual@3.8.4':
+    resolution: {integrity: sha512-4Pq8odunHQPsTg2iE2yzWdzYed/8LySy2knxqJYkaNOQRXbqJ7O/Owpoon8ZM9L+jLL1faM5TVHV0eJxm68q8A==}
     peerDependencies:
       vue: ^2.7.0 || ^3.0.0
 
@@ -1999,8 +1999,8 @@ packages:
   caniuse-api@3.0.0:
     resolution: {integrity: sha512-bsTwuIg/BZZK/vreVTYYbSWoe2F+71P7K5QGEX+pT250DZbfU1MQ5prOKpPR+LL6uWKK3KMwMCAS74QB3Um1uw==}
 
-  caniuse-lite@1.0.30001643:
-    resolution: {integrity: sha512-ERgWGNleEilSrHM6iUz/zJNSQTP8Mr21wDWpdgvRwcTXGAq6jMtOUPP4dqFPTdKqZ2wKTdtB+uucZ3MRpAUSmg==}
+  caniuse-lite@1.0.30001644:
+    resolution: {integrity: sha512-YGvlOZB4QhZuiis+ETS0VXR+MExbFf4fZYYeMTEE0aTQd/RdIjkTyZjLrbYVKnHzppDvnOhritRVv+i7Go6mHw==}
 
   chalk@2.4.2:
     resolution: {integrity: sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==}
@@ -2467,8 +2467,8 @@ packages:
   ee-first@1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
 
-  electron-to-chromium@1.5.3:
-    resolution: {integrity: sha512-QNdYSS5i8D9axWp/6XIezRObRHqaav/ur9z1VzCDUCH1XIFOr9WQk5xmgunhsTpjjgDy3oLxO/WMOVZlpUQrlA==}
+  electron-to-chromium@1.5.4:
+    resolution: {integrity: sha512-orzA81VqLyIGUEA77YkVA1D+N+nNfl2isJVjjmOyrlxuooZ19ynb+dOlaDTqd/idKRS9lDCSBmtzM+kyCsMnkA==}
 
   emoji-regex@10.3.0:
     resolution: {integrity: sha512-QpLs9D9v9kArv4lfDEgg1X/gN5XLnf/A6l9cs8SPZLRZR3ZkY9+kwIQTxm+fsSej5UMYGE8fdoaZVIBlqG0XTw==}
@@ -5959,7 +5959,7 @@ snapshots:
 
   '@headlessui/vue@1.7.22(vue@3.4.34(typescript@5.5.4))':
     dependencies:
-      '@tanstack/vue-virtual': 3.8.3(vue@3.4.34(typescript@5.5.4))
+      '@tanstack/vue-virtual': 3.8.4(vue@3.4.34(typescript@5.5.4))
       vue: 3.4.34(typescript@5.5.4)
 
   '@humanwhocodes/module-importer@1.0.1': {}
@@ -6178,7 +6178,7 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@nuxt/icon@1.4.0(magicast@0.3.4)(rollup@4.19.1)(vite@5.3.5(@types/node@22.0.0)(terser@5.31.3))(vue@3.4.34(typescript@5.5.4))':
+  '@nuxt/icon@1.4.3(magicast@0.3.4)(rollup@4.19.1)(vite@5.3.5(@types/node@22.0.0)(terser@5.31.3))(vue@3.4.34(typescript@5.5.4))':
     dependencies:
       '@iconify/collections': 1.0.444
       '@iconify/types': 2.0.0
@@ -6266,12 +6266,12 @@ snapshots:
       - rollup
       - supports-color
 
-  '@nuxt/ui@2.18.2(focus-trap@7.5.4)(magicast@0.3.4)(rollup@4.19.1)(vite@5.3.5(@types/node@22.0.0)(terser@5.31.3))(vue@3.4.34(typescript@5.5.4))':
+  '@nuxt/ui@2.18.3(focus-trap@7.5.4)(magicast@0.3.4)(rollup@4.19.1)(vite@5.3.5(@types/node@22.0.0)(terser@5.31.3))(vue@3.4.34(typescript@5.5.4))':
     dependencies:
       '@headlessui/tailwindcss': 0.2.1(tailwindcss@3.4.7)
       '@headlessui/vue': 1.7.22(vue@3.4.34(typescript@5.5.4))
       '@iconify-json/heroicons': 1.1.23
-      '@nuxt/icon': 1.4.0(magicast@0.3.4)(rollup@4.19.1)(vite@5.3.5(@types/node@22.0.0)(terser@5.31.3))(vue@3.4.34(typescript@5.5.4))
+      '@nuxt/icon': 1.4.3(magicast@0.3.4)(rollup@4.19.1)(vite@5.3.5(@types/node@22.0.0)(terser@5.31.3))(vue@3.4.34(typescript@5.5.4))
       '@nuxt/kit': 3.12.4(magicast@0.3.4)(rollup@4.19.1)
       '@nuxtjs/color-mode': 3.4.2(magicast@0.3.4)(rollup@4.19.1)
       '@nuxtjs/tailwindcss': 6.12.1(magicast@0.3.4)(rollup@4.19.1)
@@ -6817,11 +6817,11 @@ snapshots:
       postcss-selector-parser: 6.0.10
       tailwindcss: 3.4.7
 
-  '@tanstack/virtual-core@3.8.3': {}
+  '@tanstack/virtual-core@3.8.4': {}
 
-  '@tanstack/vue-virtual@3.8.3(vue@3.4.34(typescript@5.5.4))':
+  '@tanstack/vue-virtual@3.8.4(vue@3.4.34(typescript@5.5.4))':
     dependencies:
-      '@tanstack/virtual-core': 3.8.3
+      '@tanstack/virtual-core': 3.8.4
       vue: 3.4.34(typescript@5.5.4)
 
   '@trysound/sax@0.2.0': {}
@@ -7408,7 +7408,7 @@ snapshots:
   autoprefixer@10.4.19(postcss@8.4.40):
     dependencies:
       browserslist: 4.23.2
-      caniuse-lite: 1.0.30001643
+      caniuse-lite: 1.0.30001644
       fraction.js: 4.3.7
       normalize-range: 0.1.2
       picocolors: 1.0.1
@@ -7457,8 +7457,8 @@ snapshots:
 
   browserslist@4.23.2:
     dependencies:
-      caniuse-lite: 1.0.30001643
-      electron-to-chromium: 1.5.3
+      caniuse-lite: 1.0.30001644
+      electron-to-chromium: 1.5.4
       node-releases: 2.0.18
       update-browserslist-db: 1.1.0(browserslist@4.23.2)
 
@@ -7512,11 +7512,11 @@ snapshots:
   caniuse-api@3.0.0:
     dependencies:
       browserslist: 4.23.2
-      caniuse-lite: 1.0.30001643
+      caniuse-lite: 1.0.30001644
       lodash.memoize: 4.1.2
       lodash.uniq: 4.5.0
 
-  caniuse-lite@1.0.30001643: {}
+  caniuse-lite@1.0.30001644: {}
 
   chalk@2.4.2:
     dependencies:
@@ -7932,7 +7932,7 @@ snapshots:
 
   ee-first@1.1.1: {}
 
-  electron-to-chromium@1.5.3: {}
+  electron-to-chromium@1.5.4: {}
 
   emoji-regex@10.3.0: {}
 
