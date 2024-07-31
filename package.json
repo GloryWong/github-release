@@ -15,7 +15,7 @@
     "lint:fix": "pnpm lint --fix"
   },
   "dependencies": {
-    "@nuxt/ui": "^2.18.2",
+    "@nuxt/ui": "^2.18.3",
     "expiry-map": "^2.0.0",
     "localforage": "^1.10.0",
     "micromark": "^4.0.0",
