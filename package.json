@@ -24,8 +24,8 @@
     "octokit": "^4.0.2",
     "p-memoize": "^7.1.1",
     "tailwindcss-scoped-preflight": "^3.4.3",
-    "vue": "^3.4.35",
-    "vue-router": "^4.4.2"
+    "vue": "^3.4.36",
+    "vue-router": "^4.4.3"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.24.1",
