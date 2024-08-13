@@ -34,7 +34,7 @@
     "@morev/vue-transitions": "^3.0.2",
     "@pinia/nuxt": "^0.5.3",
     "@vueuse/nuxt": "^10.11.1",
-    "eslint": "^9.8.0",
+    "eslint": "^9.9.0",
     "lint-staged": "^15.2.8",
     "nuxt-security": "^1.4.3",
     "simple-git-hooks": "^2.11.1",
