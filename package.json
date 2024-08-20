@@ -38,7 +38,7 @@
     "lint-staged": "^15.2.9",
     "nuxt-security": "^1.4.3",
     "simple-git-hooks": "^2.11.1",
-    "type-fest": "^4.24.0"
+    "type-fest": "^4.25.0"
   },
   "simple-git-hooks": {
     "commit-msg": "pnpm commitlint --edit ${1}",
