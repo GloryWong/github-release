@@ -15,7 +15,7 @@
     "lint:fix": "pnpm lint --fix"
   },
   "dependencies": {
-    "@nuxt/ui": "^2.18.5",
+    "@nuxt/ui": "^2.18.6",
     "expiry-map": "^2.0.0",
     "localforage": "^1.10.0",
     "micromark": "^4.0.0",
@@ -24,7 +24,7 @@
     "octokit": "^4.0.2",
     "p-memoize": "^7.1.1",
     "tailwindcss-scoped-preflight": "^3.4.4",
-    "vue": "^3.5.6",
+    "vue": "^3.5.9",
     "vue-router": "^4.4.5"
   },
   "devDependencies": {
@@ -34,7 +34,7 @@
     "@morev/vue-transitions": "^3.0.2",
     "@pinia/nuxt": "^0.5.4",
     "@vueuse/nuxt": "^10.11.1",
-    "eslint": "^9.10.0",
+    "eslint": "^9.11.1",
     "lint-staged": "^15.2.10",
     "nuxt-security": "^1.4.3",
     "simple-git-hooks": "^2.11.1",
