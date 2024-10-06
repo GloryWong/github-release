@@ -23,8 +23,8 @@
     "nuxt": "^3.13.2",
     "octokit": "^4.0.2",
     "p-memoize": "^7.1.1",
-    "tailwindcss-scoped-preflight": "^3.4.4",
-    "vue": "^3.5.9",
+    "tailwindcss-scoped-preflight": "^3.4.5",
+    "vue": "^3.5.11",
     "vue-router": "^4.4.5"
   },
   "devDependencies": {
@@ -32,7 +32,7 @@
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
     "@morev/vue-transitions": "^3.0.2",
-    "@pinia/nuxt": "^0.5.4",
+    "@pinia/nuxt": "^0.5.5",
     "@vueuse/nuxt": "^10.11.1",
     "eslint": "^9.11.1",
     "lint-staged": "^15.2.10",
