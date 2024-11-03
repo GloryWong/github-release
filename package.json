@@ -32,7 +32,7 @@
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
     "@morev/vue-transitions": "^3.0.2",
-    "@pinia/nuxt": "^0.5.5",
+    "@pinia/nuxt": "^0.6.1",
     "@vueuse/nuxt": "^10.11.1",
     "eslint": "^9.13.0",
     "lint-staged": "^15.2.10",
