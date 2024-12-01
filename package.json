@@ -20,25 +20,25 @@
     "localforage": "^1.10.0",
     "micromark": "^4.0.1",
     "micromark-extension-gfm": "^3.0.0",
-    "nuxt": "^3.14.159",
+    "nuxt": "^3.14.1592",
     "octokit": "^4.0.2",
     "p-memoize": "^7.1.1",
     "tailwindcss-scoped-preflight": "^3.4.9",
-    "vue": "^3.5.12",
-    "vue-router": "^4.4.5"
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.27.3",
-    "@commitlint/cli": "^19.5.0",
-    "@commitlint/config-conventional": "^19.5.0",
+    "@commitlint/cli": "^19.6.0",
+    "@commitlint/config-conventional": "^19.6.0",
     "@morev/vue-transitions": "^3.0.5",
-    "@pinia/nuxt": "^0.7.0",
+    "@pinia/nuxt": "^0.8.0",
     "@vueuse/nuxt": "^10.11.1",
-    "eslint": "^9.14.0",
+    "eslint": "^9.15.0",
     "lint-staged": "^15.2.10",
     "nuxt-security": "^1.4.3",
     "simple-git-hooks": "^2.11.1",
-    "type-fest": "^4.26.1"
+    "type-fest": "^4.29.0"
   },
   "simple-git-hooks": {
     "commit-msg": "pnpm commitlint --edit ${1}",
