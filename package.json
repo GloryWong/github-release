@@ -32,13 +32,13 @@
     "@commitlint/cli": "^19.6.0",
     "@commitlint/config-conventional": "^19.6.0",
     "@morev/vue-transitions": "^3.0.5",
-    "@pinia/nuxt": "^0.8.0",
+    "@pinia/nuxt": "^0.9.0",
     "@vueuse/nuxt": "^10.11.1",
-    "eslint": "^9.15.0",
+    "eslint": "^9.16.0",
     "lint-staged": "^15.2.10",
     "nuxt-security": "^1.4.3",
     "simple-git-hooks": "^2.11.1",
-    "type-fest": "^4.29.0"
+    "type-fest": "^4.30.0"
   },
   "simple-git-hooks": {
     "commit-msg": "pnpm commitlint --edit ${1}",
