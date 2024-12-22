@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     'nuxt-security',
     '@morev/vue-transitions/nuxt',
+    '@nuxtjs/critters',
   ],
 
   typescript: {

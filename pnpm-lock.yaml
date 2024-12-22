@@ -11,6 +11,9 @@ importers:
       '@nuxt/ui':
         specifier: ^2.20.0
         version: 2.20.0(change-case@5.4.4)(focus-trap@7.5.4)(magicast@0.3.5)(rollup@4.25.0)(typescript@5.5.4)(vite@5.4.11(@types/node@22.0.0)(terser@5.31.3))(vue@3.5.13(typescript@5.5.4))
+      '@nuxtjs/critters':
+        specifier: ^0.8.0
+        version: 0.8.0(magicast@0.3.5)(rollup@4.25.0)
       expiry-map:
         specifier: ^2.0.0
         version: 2.0.0
@@ -1023,6 +1026,9 @@ packages:
   '@nuxtjs/color-mode@3.5.2':
     resolution: {integrity: sha512-cC6RfgZh3guHBMLLjrBB2Uti5eUoGM9KyauOaYS9ETmxNWBMTvpgjvSiSJp1OFljIXPIqVTJ3xtJpSNZiO3ZaA==}
 
+  '@nuxtjs/critters@0.8.0':
+    resolution: {integrity: sha512-yuz/aA39A1e1pwdINmuc8qoHalnoySol4M5NIQK+4xwjoGkcwoKB5tOaAdod1G/iW+YVp9uxx0TF90tV3HVGng==}
+
   '@nuxtjs/tailwindcss@6.12.2':
     resolution: {integrity: sha512-qPJiFH67CkTj/2kBGBzqXihOD1rQXMsbVS4vdQvfBxOBLPfGhU1yw7AATdhPl2BBjO2krjJLuZj39t7dnDYOwg==}
 
@@ -1967,6 +1973,9 @@ packages:
   basic-auth@2.0.1:
     resolution: {integrity: sha512-NF+epuEdnUYVlGuhaxbbq+dvJttwLnGY+YixlXlME5KpQ5W3CnXA5cVTneY3SPbPDRkcjMbifrwmFYcClgOZeg==}
     engines: {node: '>= 0.8'}
+
+  beasties@0.1.0:
+    resolution: {integrity: sha512-+Ssscd2gVG24qRNC+E2g88D+xsQW4xwakWtKAiGEQ3Pw54/FGdyo9RrfxhGhEv6ilFVbB7r3Lgx+QnAxnSpECw==}
 
   before-after-hook@3.0.2:
     resolution: {integrity: sha512-Nik3Sc0ncrMK4UUdXQmAnRtzmNQTAAXmXIopizwZ1W1t8QmfJj+zL4OA2I7XPTPW5z5TDqv4hRo/JzouDJnX3A==}
@@ -3134,6 +3143,9 @@ packages:
   htmlparser2@8.0.2:
     resolution: {integrity: sha512-GYdjWKDkbRLkZ5geuHs5NY1puJ+PXwP7+fHPRz06Eirsb9ugf6d8kkXav6ADhcODhFFPMIXyxkxSuMf3D6NCFA==}
 
+  htmlparser2@9.1.0:
+    resolution: {integrity: sha512-5zfg6mHUoaer/97TxnGpxmbR7zJtPwIYFMZ/H5ucTlPZhKvtum05yiPK3Mgai3a0DyVxv7qYqoweaEd2nrYQzQ==}
+
   http-assert@1.5.0:
     resolution: {integrity: sha512-uPpH7OKX4H25hBmU6G1jWNaqJGpTXxey+YOUizJUAgu0AjLUeC8D73hTrhvDS5D+GJN1DN1+hhc/eF/wpxtp0w==}
     engines: {node: '>= 0.8'}
@@ -4279,6 +4291,9 @@ packages:
         optional: true
       ts-node:
         optional: true
+
+  postcss-media-query-parser@0.2.3:
+    resolution: {integrity: sha512-3sOlxmbKcSHMjlUXQZKQ06jOswE7oVkXPxmZdoB1r5l0q6gTFTQSHxNxOrCccElbW7dxNytifNEo8qidX2Vsig==}
 
   postcss-merge-longhand@7.0.4:
     resolution: {integrity: sha512-zer1KoZA54Q8RVHKOY5vMke0cCdNxMP3KBfDerjH/BYHh4nCIh+1Yy0t1pAEQF18ac/4z3OFclO+ZVH8azjR4A==}
@@ -6763,6 +6778,17 @@ snapshots:
       - rollup
       - supports-color
 
+  '@nuxtjs/critters@0.8.0(magicast@0.3.5)(rollup@4.25.0)':
+    dependencies:
+      '@nuxt/kit': 3.14.1592(magicast@0.3.5)(rollup@4.25.0)
+      beasties: 0.1.0
+      pathe: 1.1.2
+      ufo: 1.5.4
+    transitivePeerDependencies:
+      - magicast
+      - rollup
+      - supports-color
+
   '@nuxtjs/tailwindcss@6.12.2(magicast@0.3.5)(rollup@4.25.0)':
     dependencies:
       '@nuxt/kit': 3.14.1592(magicast@0.3.5)(rollup@4.25.0)
@@ -7858,6 +7884,17 @@ snapshots:
   basic-auth@2.0.1:
     dependencies:
       safe-buffer: 5.1.2
+
+  beasties@0.1.0:
+    dependencies:
+      css-select: 5.1.0
+      css-what: 6.1.0
+      dom-serializer: 2.0.0
+      domhandler: 5.0.3
+      htmlparser2: 9.1.0
+      picocolors: 1.1.1
+      postcss: 8.4.49
+      postcss-media-query-parser: 0.2.3
 
   before-after-hook@3.0.2: {}
 
@@ -9113,6 +9150,13 @@ snapshots:
   html-tags@3.3.1: {}
 
   htmlparser2@8.0.2:
+    dependencies:
+      domelementtype: 2.3.0
+      domhandler: 5.0.3
+      domutils: 3.1.0
+      entities: 4.5.0
+
+  htmlparser2@9.1.0:
     dependencies:
       domelementtype: 2.3.0
       domhandler: 5.0.3
@@ -10552,6 +10596,8 @@ snapshots:
       yaml: 2.5.1
     optionalDependencies:
       postcss: 8.4.49
+
+  postcss-media-query-parser@0.2.3: {}
 
   postcss-merge-longhand@7.0.4(postcss@8.4.49):
     dependencies:
