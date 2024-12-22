@@ -26,8 +26,9 @@ export function getLastestReleaseExpirationTable() {
 }
 
 export function addLatestReleaseExpiration(ownerRepo: string) {
+  const appConfig = useAppConfig()
   const table = getLastestReleaseExpirationTable()
-  return table.setItem(ownerRepo, new Date().getTime() + (LATEST_RELEASE_ITEM_MAX_LIVE * 3600000))
+  return table.setItem(ownerRepo, new Date().getTime() + (appConfig.LATEST_RELEASE_ITEM_MAX_LIVE * 3600000))
 }
 
 export async function isLatestReleaseExpired(ownerRepo: string) {

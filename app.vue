@@ -19,23 +19,30 @@ useHead({
           }"
         >
           <Brand />
-          <Search />
+          <ClientOnly>
+            <Search />
+            <template #fallback>
+              <div class="flex justify-center">
+                <USkeleton class="w-[400px] h-11" />
+              </div>
+            </template>
+          </ClientOnly>
         </div>
-        <TransitionSlide :offset="[0, '100%']" easing="ease-in-out" :duration="1000">
-          <div v-if="!initial" class="flex flex-col gap-2">
-            <Result />
-            <Footer />
-          </div>
-        </TransitionSlide>
+        <ClientOnly>
+          <Suspense>
+            <LazyContent v-if="!initial" />
+            <template #fallback>
+              <USkeleton class="w-full h-96" />
+            </template>
+          </Suspense>
+        </ClientOnly>
       </div>
     </UContainer>
-    <TransitionSlide :offset="[0, '100%']">
-      <div v-if="initial" class="fixed bottom-0 left-0 w-full">
-        <UContainer>
-          <Footer />
-        </UContainer>
-      </div>
-    </TransitionSlide>
+    <div v-if="initial" class="fixed bottom-0 left-0 w-full">
+      <UContainer>
+        <Footer />
+      </UContainer>
+    </div>
     <UNotifications />
   </div>
 </template>

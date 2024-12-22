@@ -3,6 +3,8 @@ const props = defineProps<{
   release: Release
 }>()
 
+const { GITHUB_URL_PREFIX } = useAppConfig()
+
 const ownerRepo = computed(() => {
   const [owner, repo] = getOwnerRepoFromGitHubURI(props.release.html_url)
   return {

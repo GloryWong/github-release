@@ -47,7 +47,7 @@ watch(selectedNpmOwnerRepo, (fullName) => {
     <div class="flex items-center">
       <UTooltip :text="`Switch to ${npmSearch ? 'GitHub repo search' : 'Npm search'}`">
         <UButton variant="outline" :padded="false" :color="npmSearch ? 'red' : 'white'" @click="npmSearch = !npmSearch">
-          <UIcon :name="npmSearch ? 'i-mdi-npm' : 'i-prime-github'" dynamic class="text-3xl" />
+          <UIcon :name="npmSearch ? 'i-mdi-npm' : 'i-prime-github'" class="text-3xl" />
         </UButton>
       </UTooltip>
     </div>

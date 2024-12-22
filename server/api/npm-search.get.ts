@@ -26,9 +26,8 @@ interface NpmItem {
   ownerRepo: string
 }
 
-const GITHUB_URL_PREFIX = 'https://github.com' as const
-
 function getOwnerRepoFromGitHubURI(gitHubURI: string) {
+  const { GITHUB_URL_PREFIX } = useAppConfig()
   if (!gitHubURI.startsWith(GITHUB_URL_PREFIX))
     return
 

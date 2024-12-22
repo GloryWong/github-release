@@ -17,6 +17,7 @@
   "dependencies": {
     "@nuxt/ui": "^2.20.0",
     "expiry-map": "^2.0.0",
+    "github-markdown-css": "^5.8.1",
     "localforage": "^1.10.0",
     "micromark": "^4.0.1",
     "micromark-extension-gfm": "^3.0.0",

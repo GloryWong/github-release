@@ -1,4 +1,5 @@
 export function getOwnerRepoFromGitHubURI(gitHubURI: string) {
+  const { GITHUB_URL_PREFIX } = useAppConfig()
   if (!gitHubURI.startsWith(GITHUB_URL_PREFIX)) {
     throw createError({
       message: 'Invalid gitHubURI',

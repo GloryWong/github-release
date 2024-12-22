@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { micromark } from 'micromark'
 import { gfm, gfmHtml } from 'micromark-extension-gfm'
+import 'github-markdown-css'
 
 const props = defineProps<{
   release: Release

@@ -12,21 +12,8 @@ export default defineNuxtConfig({
     '@morev/vue-transitions/nuxt',
   ],
 
-  app: {
-    head: {
-      link: [{
-        rel: 'stylesheet',
-        href: 'https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.5.1/github-markdown.min.css',
-      }],
-    },
-  },
-
   typescript: {
     shim: false,
-  },
-
-  imports: {
-    dirs: ['./constants'],
   },
 
   appConfig: {
