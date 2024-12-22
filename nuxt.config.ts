@@ -6,6 +6,9 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   vite: {
+    build: {
+      minify: 'terser',
+    },
     plugins: [
       htmlMinifier({
         minify: {
