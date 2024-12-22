@@ -1,8 +1,17 @@
+import htmlMinifier from 'vite-plugin-html-minifier'
 import pkgJson from './package.json'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+
+  vite: {
+    plugins: [
+      htmlMinifier({
+        minify: true,
+      }),
+    ],
+  },
 
   modules: [
     '@nuxt/ui',
