@@ -8,7 +8,19 @@ export default defineNuxtConfig({
   vite: {
     plugins: [
       htmlMinifier({
-        minify: true,
+        minify: {
+          collapseWhitespace: true,
+          keepClosingSlash: true,
+          removeComments: true,
+          removeRedundantAttributes: true,
+          removeScriptTypeAttributes: true,
+          removeStyleLinkTypeAttributes: true,
+          removeEmptyAttributes: true,
+          useShortDoctype: true,
+          minifyCSS: true,
+          minifyJS: true,
+          minifyURLs: true,
+        },
       }),
     ],
   },
