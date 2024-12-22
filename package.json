@@ -38,7 +38,7 @@
     "@vueuse/nuxt": "^10.11.1",
     "eslint": "^9.16.0",
     "lint-staged": "^15.2.11",
-    "nuxt-security": "^1.4.3",
+    "nuxt-security": "^2.1.5",
     "simple-git-hooks": "^2.11.1",
     "type-fest": "^4.30.1"
   },
