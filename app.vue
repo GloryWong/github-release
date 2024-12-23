@@ -33,12 +33,18 @@ useHead({
           </ClientOnly>
         </div>
         <ClientOnly>
-          <Suspense>
-            <LazyContent v-if="!initial" />
-            <template #fallback>
-              <USkeleton class="w-full h-96" />
-            </template>
-          </Suspense>
+          <TransitionSlide :offset="[0, '100%']" easing="ease-in-out" :duration="1000">
+            <div v-if="!initial">
+              <Suspense>
+                <LazyContent v-if="!initial" />
+                <template #fallback>
+                  <div class="w-full h-96 flex justify-center items-center">
+                    <UIcon name="i-mdi-dots-circle" size="2em" class="animate-spin text-gray-500" />
+                  </div>
+                </template>
+              </Suspense>
+            </div>
+          </TransitionSlide>
         </ClientOnly>
       </div>
     </UContainer>

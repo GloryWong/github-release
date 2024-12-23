@@ -30,6 +30,11 @@ export default defineNuxtConfig({
     },
   },
 
+  colorMode: {
+    preference: 'system',
+    fallback: 'light',
+  },
+
   security: {
     headers: {
       contentSecurityPolicy: {
