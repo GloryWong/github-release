@@ -17,14 +17,16 @@ function transformItems(items: SearchRepoResultItems) {
 export type RepoItem = ReturnType<typeof transformItems>[0]
 
 export const useRepoStore = defineStore('repo', () => {
-  const loading = useState('repoSearchLoading', () => false)
-  const error = useState<NuxtError<unknown> | null>('repoSearchError', () => null)
+  const loading = ref(false)
+  const error = ref<NuxtError<unknown> | null>(null)
   const { octokit } = useOctokitStore()
 
   const _searchRepo = pMemoize(async (q: string) => {
     const { data } = await octokit.rest.search.repos({
       q,
-      per_page: 7,
+      per_page: 10,
+      sort: 'stars',
+      order: 'desc',
     })
 
     return transformItems(data.items)
@@ -43,13 +45,14 @@ export const useRepoStore = defineStore('repo', () => {
     }
 
     try {
-      return _searchRepo(q)
+      const result = await _searchRepo(q)
+      loading.value = false
+      return result
     }
     catch (err: any) {
       error.value = err
-    }
-    finally {
       loading.value = false
+      return []
     }
   }
 

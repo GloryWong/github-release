@@ -51,8 +51,9 @@ watch(selectedNpmOwnerRepo, (fullName) => {
     <SearchNpm v-if="npmSearch" v-model="selectedNpmOwnerRepo" @keyup-enter="fetchRelease" />
     <UInputMenu
       v-else v-model="selected" :search="searchRepo" :loading="searchLoading" autofocus
-      placeholder="Search for a repository" size="xl" leading-icon="i-heroicons-magnifying-glass-solid" :debounce="500"
-      option-attribute="fullName" class="w-[400px]" @keyup.enter="fetchRelease"
+      placeholder="Search for a repo" size="xl" leading-icon="i-heroicons-magnifying-glass-solid" :debounce="500"
+      option-attribute="fullName" class="w-[400px]"
+      @keyup.enter="fetchRelease"
     >
       <template #leading>
         <UAvatar v-if="selected?.avatar" :src="selected.avatar" size="2xs" />
