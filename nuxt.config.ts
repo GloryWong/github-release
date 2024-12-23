@@ -1,32 +1,8 @@
-import htmlMinifier from 'vite-plugin-html-minifier'
 import pkgJson from './package.json'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-
-  vite: {
-    build: {
-      minify: 'terser',
-    },
-    plugins: [
-      htmlMinifier({
-        minify: {
-          collapseWhitespace: true,
-          keepClosingSlash: true,
-          removeComments: true,
-          removeRedundantAttributes: true,
-          removeScriptTypeAttributes: true,
-          removeStyleLinkTypeAttributes: true,
-          removeEmptyAttributes: true,
-          useShortDoctype: true,
-          minifyCSS: true,
-          minifyJS: true,
-          minifyURLs: true,
-        },
-      }),
-    ],
-  },
 
   modules: [
     '@nuxt/ui',
