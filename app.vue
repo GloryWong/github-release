@@ -23,7 +23,11 @@ useHead({
             <Search />
             <template #fallback>
               <div class="flex justify-center">
-                <USkeleton class="w-[400px] h-11" />
+                <div class="flex justify-center gap-2 max-w-full">
+                  <USkeleton class="w-[44px] h-11 shrink-0" />
+                  <USkeleton class="w-[400px] h-11" />
+                  <USkeleton class="w-[84px] h-11 shrink-0" />
+                </div>
               </div>
             </template>
           </ClientOnly>

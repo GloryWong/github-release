@@ -4,6 +4,14 @@ import pkgJson from './package.json'
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
+  typescript: {
+    shim: false,
+  },
+
+  appConfig: {
+    appVersion: pkgJson.version,
+  },
+
   modules: [
     '@nuxt/ui',
     '@pinia/nuxt',
@@ -13,12 +21,13 @@ export default defineNuxtConfig({
     '@nuxtjs/critters',
   ],
 
-  typescript: {
-    shim: false,
-  },
-
-  appConfig: {
-    appVersion: pkgJson.version,
+  icon: {
+    clientBundle: {
+      scan: {
+        globInclude: ['components/**/*.vue'],
+        globExclude: ['node_modules', 'dist'],
+      },
+    },
   },
 
   security: {
