@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.7.2](https://github.com/GloryWong/github-release/compare/v0.7.1...v0.7.2) (2024-12-23)
+
+
+### Bug Fixes
+
+* system dark mode ([f62fb7b](https://github.com/GloryWong/github-release/commit/f62fb7b9eab12fca1306ed9bc9672038c1902b60))
+
+
+### Performance Improvements
+
+* icon bundle in client ([bb40de8](https://github.com/GloryWong/github-release/commit/bb40de87d036bf4f7a14b5e3aa60b8ddfd0d59d8))
+
 ## [0.7.1](https://github.com/GloryWong/github-release/compare/v0.7.0...v0.7.1) (2024-12-22)
 
 
