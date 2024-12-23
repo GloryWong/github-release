@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.3](https://github.com/GloryWong/github-release/compare/v0.7.2...v0.7.3) (2024-12-23)
+
+
+### Bug Fixes
+
+* use npm.io api & fix loading ([47e5667](https://github.com/GloryWong/github-release/commit/47e566701c325a1d62de9e6ee84322742afdef1f))
+
 ## [0.7.2](https://github.com/GloryWong/github-release/compare/v0.7.1...v0.7.2) (2024-12-23)
 
 
