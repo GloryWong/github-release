@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.5](https://github.com/GloryWong/github-release/compare/v0.7.4...v0.7.5) (2024-12-25)
+
+
+### Bug Fixes
+
+* replace micromark with remark ([6feafca](https://github.com/GloryWong/github-release/commit/6feafca5d8f3852cbab08745b5e5d2bcea52b491))
+
 ## [0.7.4](https://github.com/GloryWong/github-release/compare/v0.7.3...v0.7.4) (2024-12-25)
 
 
