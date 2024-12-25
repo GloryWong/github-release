@@ -40,18 +40,15 @@ const content = computedAsync(async () => {
 </script>
 
 <template>
-  <div class="px-4 py-5 sm:px-6">
-    <div v-if="evaluating" class="flex flex-col gap-4">
+  <div>
+    <div v-if="evaluating" class="flex flex-col gap-4 px-4 py-5 sm:px-6">
       <USkeleton class="w-1/3 h-8" />
       <USkeleton class="w-1/2 h-8" />
       <USkeleton class="w-full h-8" />
       <USkeleton class="w-3/4 h-8" />
       <USkeleton class="w-3/5 h-8" />
     </div>
-    <article
-      v-else data-tailwind="false" class="markdown-body box-border"
-      v-html="content"
-    >
+    <article v-else data-tailwind="false" class="markdown-body box-border px-4 py-5 sm:px-6" v-html="content">
     </article>
   </div>
 </template>
