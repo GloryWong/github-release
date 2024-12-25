@@ -1,6 +1,6 @@
-import pMemoize from 'p-memoize'
-import ExpiryMap from 'expiry-map'
 import type { NuxtError } from '#app'
+import ExpiryMap from 'expiry-map'
+import pMemoize from 'p-memoize'
 
 interface SearchNpmResultItem {
   package: {

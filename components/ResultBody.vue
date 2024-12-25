@@ -1,39 +1,56 @@
 <script setup lang="ts">
-import { micromark } from 'micromark'
-import { gfm, gfmHtml } from 'micromark-extension-gfm'
+import rehypeExternalLinks from 'rehype-external-links'
+import rehypeStarryNight from 'rehype-starry-night'
+import rehypeStringify from 'rehype-stringify'
+import remarkBreaks from 'remark-breaks'
+import remarkGfm from 'remark-gfm'
+import remarkGithub from 'remark-github'
+import remarkParse from 'remark-parse'
+import remarkRehype from 'remark-rehype'
+import { unified } from 'unified'
 import 'github-markdown-css'
 
 const props = defineProps<{
   release: Release
 }>()
 
-const content = computed(() => {
+const evaluating = ref(false)
+const content = computedAsync(async () => {
   if (!props.release.body)
     return null
 
-  const htmlString = micromark(props.release.body, {
-    extensions: [gfm()],
-    htmlExtensions: [gfmHtml()],
-  })
+  try {
+    const result = await unified()
+      .use(remarkParse)
+      .use(remarkGfm)
+      .use(remarkGithub, { repository: getOwnerRepoFromGitHubURI(props.release.html_url).join('/') })
+      .use(remarkBreaks)
+      .use(remarkRehype)
+      .use(rehypeExternalLinks, { target: '_blank', rel: ['noopener', 'noreferrer', 'nofollow'] })
+      .use(rehypeStarryNight)
+      .use(rehypeStringify)
+      .process(props.release.body)
 
-  return parseHtmlAndBlankAnchor(htmlString)
-})
-
-const container = ref()
-onMounted(() => {
-  watch(content, (val) => {
-    container.value.innerHTML = '<div class="flex justify-center text-gray-400 dark:text-gray-600">No description</div>'
-    if (val) {
-      container.value.innerHTML = ''
-      container.value.appendChild(val)
-    }
-  }, { immediate: true })
-})
+    return String(result)
+  }
+  catch (error) {
+    return error
+  }
+}, null, evaluating)
 </script>
 
 <template>
-  <article ref="container" data-tailwind="false" class="markdown-body box-border px-4 py-5 sm:p-6 md:p-8 lg:p-11">
-  </article>
+  <div>
+    <div v-if="evaluating" class="flex flex-col gap-4 px-4 py-5 sm:p-6 md:p-8 lg:p-11">
+      <USkeleton class="w-1/3 h-8" />
+      <USkeleton class="w-1/2 h-8" />
+      <USkeleton class="w-full h-8" />
+      <USkeleton class="w-3/4 h-8" />
+      <USkeleton class="w-3/5 h-8" />
+    </div>
+    <article v-else data-tailwind="false" class="markdown-body box-border px-4 py-5 sm:p-6 md:p-8 lg:p-11" v-html="content">
+    </article>
+  </div>
 </template>
 
 <style scoped>

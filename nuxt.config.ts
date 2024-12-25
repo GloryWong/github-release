@@ -45,6 +45,7 @@ export default defineNuxtConfig({
           'github.com/',
           '*.amazonaws.com/',
         ],
+        'script-src': ['\'self\'', 'https:', '\'unsafe-inline\'', '\'strict-dynamic\'', '\'nonce-{{nonce}}\'', '\'unsafe-eval\''],
       },
       crossOriginEmbedderPolicy: 'unsafe-none',
     },

@@ -26,7 +26,7 @@ useHead({
         v-if="loading"
         class="absolute top-0 bottom-0 left-0 right-0 bg-white/90 dark:bg-gray-900/80 flex justify-center"
       >
-        <Icon name="svg-spinners:90-ring-with-bg" size="2rem" color="gray" class="mt-12" />
+        <Icon name="i-mdi-dots-circle" size="2rem" color="gray" class="mt-12 animate-spin" />
       </div>
     </TransitionFade>
   </div>
