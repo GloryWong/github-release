@@ -1,8 +1,8 @@
-import pMemoize from 'p-memoize'
-import ExpiryMap from 'expiry-map'
-import type { Octokit } from 'octokit'
-import type { GetResponseTypeFromEndpointMethod } from '@octokit/types'
 import type { NuxtError } from '#app'
+import type { GetResponseTypeFromEndpointMethod } from '@octokit/types'
+import type { Octokit } from 'octokit'
+import ExpiryMap from 'expiry-map'
+import pMemoize from 'p-memoize'
 
 export type SearchRepoResultItems = GetResponseTypeFromEndpointMethod<Octokit['rest']['search']['repos']>['data']['items']
 
@@ -19,10 +19,10 @@ export type RepoItem = ReturnType<typeof transformItems>[0]
 export const useRepoStore = defineStore('repo', () => {
   const loading = ref(false)
   const error = ref<NuxtError<unknown> | null>(null)
-  const { octokit } = useOctokitStore()
+  const { $octokit } = useNuxtApp()
 
   const _searchRepo = pMemoize(async (q: string) => {
-    const { data } = await octokit.rest.search.repos({
+    const { data } = await $octokit.rest.search.repos({
       q,
       per_page: 10,
       sort: 'stars',

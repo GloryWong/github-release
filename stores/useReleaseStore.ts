@@ -1,19 +1,19 @@
-import type { Octokit } from 'octokit'
-import type { GetResponseTypeFromEndpointMethod } from '@octokit/types'
 import type { NuxtError } from '#app'
+import type { GetResponseTypeFromEndpointMethod } from '@octokit/types'
+import type { Octokit } from 'octokit'
 
 export type Release = GetResponseTypeFromEndpointMethod<Octokit['rest']['repos']['getRelease']>['data']
 
 export const useReleaseStore = defineStore('release', () => {
-  const owner = useState('owner', () => '')
-  const repo = useState('repo', () => '')
-  const tagName = useState<string | undefined>('tagName')
+  const owner = ref('')
+  const repo = ref('')
+  const tagName = ref<string | undefined>()
 
-  const release = useState<Release | undefined | null>('release', () => undefined)
-  const loading = useState('loading', () => false)
-  const error = useState<NuxtError<unknown> | null>('error', () => null)
-  const notFounds = useState('notFound', () => new Set<string>())
-  const { octokit } = useOctokitStore()
+  const release = ref<Release | undefined | null>()
+  const loading = ref(false)
+  const error = ref<NuxtError<unknown> | null>(null)
+  const notFounds = ref(new Set<string>())
+  const { $octokit } = useNuxtApp()
 
   const fetchRelease = async () => {
     error.value = null
@@ -37,7 +37,7 @@ export const useReleaseStore = defineStore('release', () => {
 
       let data: Release
       if (_tagName) {
-        const result = await octokit.rest.repos.getReleaseByTag({
+        const result = await $octokit.rest.repos.getReleaseByTag({
           owner: _owner,
           repo: _repo,
           tag: _tagName,
@@ -45,7 +45,7 @@ export const useReleaseStore = defineStore('release', () => {
         data = result.data
       }
       else {
-        const result = await octokit.rest.repos.getLatestRelease({
+        const result = await $octokit.rest.repos.getLatestRelease({
           owner: _owner,
           repo: _repo,
         })

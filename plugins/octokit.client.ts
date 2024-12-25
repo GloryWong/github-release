@@ -1,9 +1,11 @@
 import { Octokit } from 'octokit'
 
-export const useOctokitStore = defineStore('octokit', () => {
+export default defineNuxtPlugin(() => {
   const octokit = new Octokit()
 
   return {
-    octokit,
+    provide: {
+      octokit,
+    },
   }
 })
