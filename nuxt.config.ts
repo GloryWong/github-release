@@ -42,6 +42,8 @@ export default defineNuxtConfig({
           '\'self\'',
           'data:',
           '*.githubusercontent.com/',
+          'github.com/',
+          '*.amazonaws.com/',
         ],
       },
       crossOriginEmbedderPolicy:
