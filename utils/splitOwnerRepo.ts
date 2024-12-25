@@ -13,5 +13,5 @@ export function splitOwnerRepo(name: string) {
       statusCode: 400,
     })
   }
-  return [owner, repo]
+  return [owner, repo] as [owner: string, repo: string]
 }

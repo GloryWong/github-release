@@ -15,5 +15,5 @@ export function getOwnerRepoFromGitHubURI(gitHubURI: string) {
     })
   }
 
-  return [matches[1], matches[2]]
+  return [matches[1], matches[2]] as [owner: string, repo: string]
 }

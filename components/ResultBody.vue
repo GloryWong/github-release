@@ -25,7 +25,7 @@ const content = computedAsync(async () => {
     const result = await unified()
       .use(remarkParse)
       .use(remarkGfm)
-      .use(remarkGithub, { repository: getOwnerRepoFromGitHubURI(props.release.html_url).join('/') })
+      .use(remarkGithub, { repository: compositeOwnerRepo(...getOwnerRepoFromGitHubURI(props.release.html_url)) })
       .use(remarkBreaks)
       .use(remarkAlert)
       .use(remarkRehype)
