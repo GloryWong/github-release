@@ -46,8 +46,7 @@ export default defineNuxtConfig({
           '*.amazonaws.com/',
         ],
       },
-      crossOriginEmbedderPolicy:
-        process.env.NODE_ENV === 'development' ? 'unsafe-none' : 'require-corp',
+      crossOriginEmbedderPolicy: 'unsafe-none',
     },
   },
 
