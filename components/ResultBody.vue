@@ -5,10 +5,12 @@ import rehypeStringify from 'rehype-stringify'
 import remarkBreaks from 'remark-breaks'
 import remarkGfm from 'remark-gfm'
 import remarkGithub from 'remark-github'
+import { remarkAlert } from 'remark-github-blockquote-alert'
 import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
 import { unified } from 'unified'
 import 'github-markdown-css'
+import 'remark-github-blockquote-alert/alert.css'
 
 const props = defineProps<{
   release: Release
@@ -25,6 +27,7 @@ const content = computedAsync(async () => {
       .use(remarkGfm)
       .use(remarkGithub, { repository: getOwnerRepoFromGitHubURI(props.release.html_url).join('/') })
       .use(remarkBreaks)
+      .use(remarkAlert)
       .use(remarkRehype)
       .use(rehypeExternalLinks, { target: '_blank', rel: ['noopener', 'noreferrer', 'nofollow'] })
       .use(rehypeStarryNight)
