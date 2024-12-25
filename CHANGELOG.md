@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.7.4](https://github.com/GloryWong/github-release/compare/v0.7.3...v0.7.4) (2024-12-25)
+
+
+### Bug Fixes
+
+* add more img srcs in CSP ([c6883d0](https://github.com/GloryWong/github-release/commit/c6883d03da379a6d563cf72246a357312032d511))
+* coep to unsafe-none ([752257a](https://github.com/GloryWong/github-release/commit/752257a9ca6d1aa424c8e59dc366a9377bee9e78))
+
 ## [0.7.3](https://github.com/GloryWong/github-release/compare/v0.7.2...v0.7.3) (2024-12-23)
 
 
