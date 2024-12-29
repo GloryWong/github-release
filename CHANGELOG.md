@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.6](https://github.com/GloryWong/github-release/compare/v0.7.5...v0.7.6) (2024-12-29)
+
+
+### Bug Fixes
+
+* **result body:** add remark admonition ([96c0390](https://github.com/GloryWong/github-release/commit/96c03909695a380838425dd5589b042605b0a222))
+
 ## [0.7.5](https://github.com/GloryWong/github-release/compare/v0.7.4...v0.7.5) (2024-12-25)
 
 
