@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.7.6](https://github.com/GloryWong/github-release/compare/v0.7.5...v0.7.6) (2025-01-12)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#47](https://github.com/GloryWong/github-release/issues/47)) ([49effb4](https://github.com/GloryWong/github-release/commit/49effb4e34ea308aa396b82ef55c821e836b5665))
+* **result body:** add remark admonition ([96c0390](https://github.com/GloryWong/github-release/commit/96c03909695a380838425dd5589b042605b0a222))
+
 ## [0.7.5](https://github.com/GloryWong/github-release/compare/v0.7.4...v0.7.5) (2024-12-25)
 
 
