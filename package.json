@@ -35,8 +35,8 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.16.0",
-    "@commitlint/cli": "^19.6.1",
-    "@commitlint/config-conventional": "^19.6.0",
+    "@commitlint/cli": "^19.7.1",
+    "@commitlint/config-conventional": "^19.7.1",
     "@iconify-json/mdi": "^1.2.3",
     "@morev/vue-transitions": "^3.0.5",
     "@nuxt/ui": "^2.21.0",
