@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.7.7](https://github.com/GloryWong/github-release/compare/v0.7.6...v0.7.7) (2025-03-30)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#54](https://github.com/GloryWong/github-release/issues/54)) ([94ab5f6](https://github.com/GloryWong/github-release/commit/94ab5f62223eae971ed12784182d4109b228c5d2))
+* **deps:** update all non-major dependencies ([#56](https://github.com/GloryWong/github-release/issues/56)) ([735ec4a](https://github.com/GloryWong/github-release/commit/735ec4ac7a852a057265a0deca7c5c143e51ce8b))
+
 ## [0.7.6](https://github.com/GloryWong/github-release/compare/v0.7.5...v0.7.6) (2025-01-12)
 
 
