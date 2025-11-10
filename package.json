@@ -49,7 +49,7 @@
     "nuxt-security": "^2.4.0",
     "simple-git-hooks": "^2.13.1",
     "tailwindcss-scoped-preflight": "^3.5.3",
-    "type-fest": "^4.41.0"
+    "type-fest": "^5.2.0"
   },
   "simple-git-hooks": {
     "commit-msg": "pnpm commitlint --edit ${1}",
