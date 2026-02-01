@@ -45,7 +45,7 @@
     "@vueuse/nuxt": "^13.9.0",
     "eslint": "^9.39.2",
     "lint-staged": "^15.5.2",
-    "nuxt": "^3.20.2",
+    "nuxt": "^3.21.0",
     "nuxt-security": "^2.5.1",
     "simple-git-hooks": "^2.13.1",
     "tailwindcss-scoped-preflight": "^3.5.7",
