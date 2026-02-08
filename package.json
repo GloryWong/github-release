@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "expiry-map": "^2.0.0",
-    "github-markdown-css": "^5.8.1",
+    "github-markdown-css": "^5.9.0",
     "localforage": "^1.10.0",
     "octokit": "^4.1.4",
     "p-memoize": "^7.1.1",
