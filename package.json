@@ -39,7 +39,7 @@
     "@commitlint/config-conventional": "^19.8.1",
     "@iconify-json/mdi": "^1.2.3",
     "@morev/vue-transitions": "^3.0.5",
-    "@nuxt/ui": "^2.22.3",
+    "@nuxt/ui": "^4.5.0",
     "@nuxtjs/critters": "^0.9.0",
     "@pinia/nuxt": "^0.11.3",
     "@vueuse/nuxt": "^13.9.0",
